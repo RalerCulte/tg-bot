@@ -2,7 +2,6 @@ package alltheshamefeelsthesame.services.bots;
 
 import alltheshamefeelsthesame.services.PageButtons;
 import alltheshamefeelsthesame.services.enums.Condition;
-import alltheshamefeelsthesame.services.enums.Subjects;
 import lombok.SneakyThrows;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendDocument;

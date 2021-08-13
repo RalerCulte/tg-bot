@@ -53,6 +53,11 @@ public class HandlerBot extends TelegramLongPollingBot {
 
     public Condition handle(Condition currentPage, Message message) {
 
+        /*if (message.hasDocument()) {
+            senderBot.sendText(message.getChatId().toString(), message.getDocument().getFileId().toString(), FIRST_PAGE);
+            return FIRST_PAGE;
+        }
+*/
         if (message.hasSuccessfulPayment()) {
             senderBot.sendText(adminId, "Оплата получена", FIRST_PAGE);
             senderBot.sendText(message.getChatId().toString(), "Спасибо за покупку!\nБудем благодарны отзыву тут: https://vk.com/topic-206190730_48122282",
@@ -312,7 +317,7 @@ public class HandlerBot extends TelegramLongPollingBot {
         for (int i = 0; i < 7; i++) {
             if (findSame(message, chatId, i)) return SEVENTH_PAGE;
         }
-        noMatches(message,chatId, SEVENTH_PAGE);
+        noMatches(message, chatId, SEVENTH_PAGE);
         return SEVENTH_PAGE;
     }
 
@@ -324,7 +329,7 @@ public class HandlerBot extends TelegramLongPollingBot {
         for (int i = 0; i < 4; i++) {
             if (findSame(message, chatId, i)) return EIGHTH_PAGE;
         }
-        noMatches(message,chatId, EIGHTH_PAGE);
+        noMatches(message, chatId, EIGHTH_PAGE);
         return EIGHTH_PAGE;
     }
 
@@ -334,7 +339,7 @@ public class HandlerBot extends TelegramLongPollingBot {
             return check;
         }
         if (findSameWords(message, chatId, NINTH_PAGE)) return NINTH_PAGE;
-        noMatches(message,chatId, NINTH_PAGE);
+        noMatches(message, chatId, NINTH_PAGE);
         return NINTH_PAGE;
     }
 
@@ -344,7 +349,7 @@ public class HandlerBot extends TelegramLongPollingBot {
             return check;
         }
         if (findSameWords(message, chatId, TENTH_PAGE)) return TENTH_PAGE;
-        noMatches(message,chatId, TENTH_PAGE);
+        noMatches(message, chatId, TENTH_PAGE);
         return TENTH_PAGE;
     }
 
